@@ -1,22 +1,26 @@
-import React from "react";
-import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
+import React, { useRef } from "react";
+import { AppBar, Box, Button, Stack, Toolbar, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Link from "next/link";
+import Contact from "./Contact";
 
 const Header: React.FC = () => {
+    const titleRef = useRef<null | HTMLDivElement>(null)
+
+
+  function handleCrollClick() {
+      titleRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ background: "linear-gradient(45deg, #ffd700, #ff8c00)"
-
-
-
- }}>
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: "Montserat"}}>
+      <AppBar position="static" sx={{ background: "linear-gradient(45deg, #ffd700, #ff8c00)" }}>
+        <Toolbar sx={{justifyContent: 'space-around'}}>
+          <Typography variant="h5" component="div" sx={{ fontFamily: "Montserat"}}>
             Guilherme Santiago
           </Typography>
+        <Stack sx={{flexDirection: "row"}}>
           <Link target="_blank" href="https://www.linkedin.com/in/guilherme-santiago-dev/" passHref>
             <Button variant="contained">
               <LinkedInIcon fontSize="medium" />
@@ -27,13 +31,13 @@ const Header: React.FC = () => {
               <GitHubIcon fontSize="medium" />
             </Button>
           </Link>
-          <Link href="/projects" passHref>
-            <Button variant="contained">
+            <Button variant="contained" onClick={handleCrollClick}>
               <ContactMailIcon />
             </Button>
-          </Link>
-        </Toolbar>
+          </Stack>
+          </Toolbar>
       </AppBar>
+      <div ref={titleRef} /> {<Contact />}
     </Box>
   );
 };
