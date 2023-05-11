@@ -20,6 +20,9 @@ const Header: React.FC = () => {
           <Typography variant="h5" component="div" sx={{ fontFamily: "Montserat"}}>
             Guilherme Santiago
           </Typography>
+          <Button variant="contained" onClick={handleCrollClick}>
+              <ContactMailIcon />
+            </Button>
         <Stack sx={{flexDirection: "row"}}>
           <Link target="_blank" href="https://www.linkedin.com/in/guilherme-santiago-dev/" passHref>
             <Button variant="contained">
@@ -31,9 +34,6 @@ const Header: React.FC = () => {
               <GitHubIcon fontSize="medium" />
             </Button>
           </Link>
-            <Button variant="contained" onClick={handleCrollClick}>
-              <ContactMailIcon />
-            </Button>
           </Stack>
           </Toolbar>
       </AppBar>

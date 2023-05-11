@@ -7,19 +7,17 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <Box display="flex" justifyContent="center">
+    <Box justifyContent="center">
       <FormControl onSubmit={handleSubmit}>
         <TextField label="Nome" fullWidth />
         <TextField label="Email" fullWidth />
-        <Box display="flex" alignItems="flex-start">
           <TextField
             label="Mensagem"
             fullWidth
             multiline
             rows={4}
           />
-        </Box>
-        <Button type="submit">Enviar</Button>
+        <Button type="submit" variant="contained">Enviar</Button>
       </FormControl>
     </Box>
   );
