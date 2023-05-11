@@ -5,9 +5,9 @@ import { Box, Container } from "@mui/system";
 
 export default function Home() {
   return (
-    <Box sx={{bgcolor: 'secondary', width: "100%"}}>
+    <Box>
       <Header />
-      <Projects />
-    </Box>
+      </Box>
+   
   )
 }
