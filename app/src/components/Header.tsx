@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { AppBar, Box, Button, Stack, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Container, Stack, Toolbar, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box>
       <AppBar position="static" sx={{ background: "linear-gradient(45deg, #ffd700, #ff8c00)" }}>
         <Toolbar sx={{ justifyContent: "space-around" }}>
           <Stack sx={{ flexDirection: "row" }}>
@@ -32,8 +32,10 @@ const Header: React.FC = () => {
             </Button>
           </Stack>
           <Stack sx={{ flexDirection: "row" }}>
-            <Button variant="contained" onClick={handleScrollToProjects} sx={{ mx: 1 }}>
+            <Button variant="contained" sx={{mx: 1}}>
+          <Typography component="div" onClick={handleScrollToProjects} sx={{ fontFamily: "Montserrat", cursor: 'pointer'}}>
               Works
+            </Typography>
             </Button>
             <Link target="_blank" href="https://www.linkedin.com/in/guilherme-santiago-dev/" passHref>
               <Button variant="contained">
@@ -52,7 +54,6 @@ const Header: React.FC = () => {
       {<Projects />}
       <div ref={contactRef} />
       {<Contact />}
-   
     </Box>
   );
 };

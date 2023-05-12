@@ -61,46 +61,6 @@ const Projects: React.FC = () => {
       description:
         "This project performs webscrap searching for real-time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
     },
-    {
-      title: "WebScrap",
-      image: "/images/webscrap.png",
-      siteUrl: "https://lexart-app.up.railway.app/",
-      repositoryUrl: "https://github.com/GuilhermeSantiago18/FullStackProject",
-      description:
-        "This project performs webscrap searching for real-time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
-    },
-    {
-      title: "WebScrap",
-      image: "/images/webscrap.png",
-      siteUrl: "https://lexart-app.up.railway.app/",
-      repositoryUrl: "https://github.com/GuilhermeSantiago18/FullStackProject",
-      description:
-        "This project performs webscrap searching for real-time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
-    },
-    {
-      title: "WebScrap",
-      image: "/images/webscrap.png",
-      siteUrl: "https://lexart-app.up.railway.app/",
-      repositoryUrl: "https://github.com/GuilhermeSantiago18/FullStackProject",
-      description:
-        "This project performs webscrap searching for real-time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
-    },
-    {
-      title: "WebScrap",
-      image: "/images/webscrap.png",
-      siteUrl: "https://lexart-app.up.railway.app/",
-      repositoryUrl: "https://github.com/GuilhermeSantiago18/FullStackProject",
-      description:
-        "This project performs webscrap searching for real-time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
-    },
-    {
-      title: "WebScrap",
-      image: "/images/webscrap.png",
-      siteUrl: "https://lexart-app.up.railway.app/",
-      repositoryUrl: "https://github.com/GuilhermeSantiago18/FullStackProject",
-      description:
-        "This project performs webscrap searching for real-time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
-    },
   ];
 
   return (
@@ -115,7 +75,7 @@ const Projects: React.FC = () => {
         </Typography>
       </Box>
 
-      <Grid container justifyContent="center" spacing={2}>
+      <Grid container justifyContent="flex-start" spacing={2}>
         {projects.map((project, index) => (
           <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
             <Card

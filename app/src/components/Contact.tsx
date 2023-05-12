@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, Button, FormControl, Box } from "@mui/material";
+import { TextField, Button, FormControl, Box, Container, Grid } from "@mui/material";
 
 const Contact: React.FC = () => {
   const handleSubmit = (event: React.FormEvent) => {
@@ -7,19 +7,29 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <Box justifyContent="center">
+    <Container>
       <FormControl onSubmit={handleSubmit}>
-        <TextField label="Nome" fullWidth />
-        <TextField label="Email" fullWidth />
-          <TextField
-            label="Mensagem"
-            fullWidth
-            multiline
-            rows={4}
-          />
-        <Button type="submit" variant="contained">Enviar</Button>
+        <Grid container spacing={1} p={1} justifyContent="right">
+          <Grid item xs={6}>
+            <TextField label="Name" fullWidth />
+          </Grid>
+          <Grid item xs={6}>
+            <TextField label="Email" fullWidth />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              label="Write your message"
+              fullWidth
+              multiline
+              rows={4}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <Button type="submit" variant="contained" fullWidth>Send</Button>
+          </Grid>
+        </Grid>
       </FormControl>
-    </Box>
+    </Container>
   );
 };
 
