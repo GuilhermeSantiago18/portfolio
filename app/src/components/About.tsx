@@ -4,10 +4,9 @@ import { TextField, Typography, Box, Container, styled } from "@mui/material";
 
 
 const ProfileContainer = styled(Container)`
-  background: linear-gradient(45deg, #ffd700, #ff8c00);
   padding: 24px;
   border-radius: 8px;
-  color: white;
+  color: #251D00;
 `;
 
 const About: React.FC = () => {
@@ -19,7 +18,7 @@ const About: React.FC = () => {
           About me
         </Typography>
         <Typography variant="h6" >
-          About:
+         I'm Guilherme Santiago
         </Typography>
       </Box>
     </ProfileContainer>
