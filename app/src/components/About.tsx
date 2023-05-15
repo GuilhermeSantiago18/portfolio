@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { TextField, Typography, Box, Container, styled } from "@mui/material";
+import { TextField, Typography, Box, Container, styled, Skeleton, Grow } from "@mui/material";
 
 
 
 const ProfileContainer = styled(Container)`
-  padding: 24px;
-  border-radius: 8px;
-  color: #251D00;
+  color: #68957C;
+  background: #121212;
 `;
 
 const About: React.FC = () => {
@@ -14,12 +13,16 @@ const About: React.FC = () => {
   return (
     <ProfileContainer maxWidth="md">
       <Box>
+      <Grow  in={true} timeout={1000}>
         <Typography variant="h4">
           About me
         </Typography>
+          </Grow>
+        <Grow  in={true} timeout={2000}>
         <Typography variant="h6" >
-         I'm Guilherme Santiago
+        I'm Guilherme Santiago, i live in Natal/RN, a coastal city in the northeast of Brazil. Welcome, meet some of my projects and feel free to leave your message!
         </Typography>
+        </Grow>
       </Box>
     </ProfileContainer>
   );

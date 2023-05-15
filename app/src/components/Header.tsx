@@ -1,22 +1,22 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { AppBar, Box, Button, Container, Stack, Toolbar, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import Link from "next/link";
-import Contact from "./Contact";
-import Projects from "./Projects";
+import { ScrollContextProvider, useScrollContext } from "@/Context/ScrollContext";
 
 const Header: React.FC = () => {
-  const projectsRef = useRef<null | HTMLDivElement>(null);
+  const { scrollToRef } = useScrollContext();
   const contactRef = useRef<null | HTMLDivElement>(null);
-
-  function handleScrollToProjects() {
-    projectsRef.current?.scrollIntoView({ behavior: "smooth" });
-  }
+  const projectsRef = useRef<null | HTMLDivElement>(null);
 
   function handleScrollToContact() {
-    contactRef.current?.scrollIntoView({ behavior: "smooth" });
+    scrollToRef(contactRef);
+  }
+
+  function handleScrollToProjects() {
+    scrollToRef(projectsRef);
   }
 
   return (
@@ -25,17 +25,17 @@ const Header: React.FC = () => {
         <Toolbar sx={{ justifyContent: "space-around" }}>
           <Stack sx={{ flexDirection: "row" }}>
             <Typography variant="h5" component="div" sx={{ fontFamily: "Montserrat" }}>
-              Guilherme Santiago
+             Send me a message
             </Typography>
             <Button variant="contained" onClick={handleScrollToContact} sx={{ mx: 1 }}>
               <ContactMailIcon />
             </Button>
           </Stack>
           <Stack sx={{ flexDirection: "row" }}>
-            <Button variant="contained" sx={{mx: 1}}>
-          <Typography component="div" onClick={handleScrollToProjects} sx={{ fontFamily: "Montserrat", cursor: 'pointer'}}>
-              Works
-            </Typography>
+            <Button variant="contained" sx={{ mx: 1 }} onClick={handleScrollToProjects}>
+              <Typography component="div" sx={{ fontFamily: "Montserrat", cursor: 'pointer'}}>
+                Works
+              </Typography>
             </Button>
             <Link target="_blank" href="https://www.linkedin.com/in/guilherme-santiago-dev/" passHref>
               <Button variant="contained">
@@ -50,12 +50,10 @@ const Header: React.FC = () => {
           </Stack>
         </Toolbar>
       </AppBar>
-      <div ref={projectsRef} />
-      {<Projects />}
-      <div ref={contactRef} />
-      {<Contact />}
     </Box>
   );
 };
+
+
 
 export default Header;
