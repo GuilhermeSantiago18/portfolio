@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, Typography, Box, Container, styled, Skeleton, Grow } from "@mui/material";
+import { Typography, Box, Container, styled, Grow } from "@mui/material";
 
 
 
@@ -20,7 +20,7 @@ const About: React.FC = () => {
           </Grow>
         <Grow  in={true} timeout={2000}>
         <Typography variant="h6" >
-        I'm Guilherme Santiago, i live in Natal/RN, a coastal city in the northeast of Brazil. Welcome, meet some of my projects and feel free to leave your message!
+        {`I'm Guilherme Santiago, i live in Natal/RN, a coastal city in the northeast of Brazil. Welcome, meet some of my projects and feel free to leave your message!`}
         </Typography>
         </Grow>
       </Box>
