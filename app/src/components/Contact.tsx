@@ -1,4 +1,4 @@
-import { TextField, Button, FormControl, Box, Container, Grid } from "@mui/material";
+import { TextField, Button, FormControl, Container, Grid } from "@mui/material";
 
 const Contact: React.FC = () => {
 
@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
 
   return (
     <div id="contactSection">
-    <Container sx={{mb: 50}}>
+    <Container sx={{minHeight: '100vh', mt: 2}} >
       <FormControl onSubmit={handleSubmit}>
         <Grid container spacing={1} p={1} justifyContent="right">
           <Grid item xs={6}>

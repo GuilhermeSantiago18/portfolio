@@ -11,7 +11,7 @@ const ProfileContainer = styled(Container)`
 const About: React.FC = () => {
 
   return (
-    <ProfileContainer maxWidth="md">
+    <ProfileContainer>
       <Box>
       <Grow  in={true} timeout={1000}>
         <Typography variant="h4">

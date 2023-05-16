@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Box,
-  Button,
   Card,
   CardContent,
   CardMedia,
@@ -29,6 +28,14 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       title: "WebScrap",
+      image: "/images/dashboard.png",
+      siteUrl: "https://velty-dashboard-guilhermesantiago18.vercel.app/",
+      repositoryUrl: "https://github.com/GuilhermeSantiago18/Velty-Dashboard",
+      description:
+        "This project performs webscrap searching for real-time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
+    },
+    {
+      title: "DashBoard",
       image: "/images/webscrap.png",
       siteUrl: "https://lexart-app.up.railway.app/",
       repositoryUrl: "https://github.com/GuilhermeSantiago18/FullStackProject",
@@ -37,7 +44,7 @@ const Projects: React.FC = () => {
     },
     {
       title: "WebScrap",
-      image: "/images/webscrap.png",
+      image: "/images/trivia.png",
       siteUrl: "https://lexart-app.up.railway.app/",
       repositoryUrl: "https://github.com/GuilhermeSantiago18/FullStackProject",
       description:
@@ -45,15 +52,7 @@ const Projects: React.FC = () => {
     },
     {
       title: "WebScrap",
-      image: "/images/webscrap.png",
-      siteUrl: "https://lexart-app.up.railway.app/",
-      repositoryUrl: "https://github.com/GuilhermeSantiago18/FullStackProject",
-      description:
-        "This project performs webscrap searching for real-time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
-    },
-    {
-      title: "WebScrap",
-      image: "/images/webscrap.png",
+      image: "/images/weather.png",
       siteUrl: "https://lexart-app.up.railway.app/",
       repositoryUrl: "https://github.com/GuilhermeSantiago18/FullStackProject",
       description:
@@ -70,7 +69,8 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <Container>
+    <div id="projectsSection">
+    <Container sx={{minHeight: '100vh', mt: 5}}>
       <Box textAlign="center" className="fade-in" display="flex" justifyContent="center" flexDirection="column" alignItems="center">
         <Grow in={true} timeout={3000}>
         <Typography
@@ -97,16 +97,17 @@ const Projects: React.FC = () => {
        </Grow>
        </Box>
       {showProjects && (
-        <Grid container justifyContent="flex-start" spacing={2}>
+        <Grid container justifyContent="flex-start" spacing={2} mt={2}>
           {projects.map((project, index) => (
             <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
               <Grow in={true} timeout={index * 2000}>
                 <Card
                   sx={{
-                    "&:hover": { boxShadow: 4, border: "2px solid #95D5B2" },
+                    "&:hover": { boxShadow: 4, border: "2px solid #95D5B2" }, borderRadius: 3
                   }}
                 >
                   <CardMedia
+                    sx={{minHeight: '220px'}}
                     component="img"
                     image={project.image}
                     alt="Project Image"
@@ -135,6 +136,7 @@ const Projects: React.FC = () => {
         </Grid>
       )}
     </Container>
+    </div>
   );
 };
 
