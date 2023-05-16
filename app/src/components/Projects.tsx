@@ -77,7 +77,7 @@ const Projects: React.FC = () => {
           component="h1"
           sx={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}
         >
-          WORKS
+          Works
         </Typography>
         </Grow>
        </Box>
