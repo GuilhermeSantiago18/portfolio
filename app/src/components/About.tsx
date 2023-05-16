@@ -1,30 +1,21 @@
-import React, { useState } from "react";
-import { Typography, Box, Container, styled, Grow } from "@mui/material";
-
-
-
-const ProfileContainer = styled(Container)`
-  color: #68957C;
-  background: #121212;
-`;
+import { Typography, Grow, Stack } from "@mui/material";
 
 const About: React.FC = () => {
-
   return (
-    <ProfileContainer>
-      <Box>
-      <Grow  in={true} timeout={1000}>
-        <Typography variant="h4">
-          About me
+    <Stack flexDirection="column" alignItems="center" mt={10} mb={50} p={2}>
+      <Grow in={true} timeout={1000}>
+        <Typography variant="h4" sx={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)", mb: 5 }}>About me</Typography>
+      </Grow>
+      <Grow in={true} timeout={2000}>
+        <Typography variant="h6" sx={{maxWidth: 600}}>
+          {`I'm Guilherme Santiago, I live in Natal/RN, a coastal city in the northeast of Brazil.
+          I worked for many years in the commercial area, which brought me good experience in teamwork,
+          understand the difficulties of others, always focusing on the best solution. After making some investments
+          I deepened my studies in cryptocurrencies and blockchain, which is an area that I really like and that's why I started my studies in web development.
+           Today I have several projects developed, putting into practice all the knowledge acquired.`}
         </Typography>
-          </Grow>
-        <Grow  in={true} timeout={2000}>
-        <Typography variant="h6" >
-        {`I'm Guilherme Santiago, i live in Natal/RN, a coastal city in the northeast of Brazil. Welcome, meet some of my projects and feel free to leave your message!`}
-        </Typography>
-        </Grow>
-      </Box>
-    </ProfileContainer>
+      </Grow>
+    </Stack>
   );
 };
 

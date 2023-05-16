@@ -23,7 +23,6 @@ type Project = {
 };
 
 const Projects: React.FC = () => {
-  const [showProjects, setShowProjects] = useState(false);
 
   const projects: Project[] = [
     {
@@ -74,36 +73,21 @@ const Projects: React.FC = () => {
       <Box textAlign="center" className="fade-in" display="flex" justifyContent="center" flexDirection="column" alignItems="center">
         <Grow in={true} timeout={3000}>
         <Typography
-          variant="h3"
+          variant="h4"
           component="h1"
           sx={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}
         >
           WORKS
         </Typography>
         </Grow>
-     
-      <Grow in={true} timeout={3000}>
-      <FormControlLabel
-        control={
-          <Switch
-            checked={showProjects}
-            onChange={(e) => setShowProjects(e.target.checked)}
-            color="primary"
-            
-          />
-        }
-        label="Show"
-      />
-       </Grow>
        </Box>
-      {showProjects && (
-        <Grid container justifyContent="flex-start" spacing={2} mt={2}>
+        <Grid container justifyContent="flex-start" spacing={2} mt={8} mb={5}>
           {projects.map((project, index) => (
             <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
               <Grow in={true} timeout={index * 2000}>
                 <Card
                   sx={{
-                    "&:hover": { boxShadow: 4, border: "2px solid #95D5B2" }, borderRadius: 3
+                    "&:hover": { boxShadow: 4, border: "2px solid #95D5B2" }, borderRadius: 1
                   }}
                 >
                   <CardMedia
@@ -134,7 +118,6 @@ const Projects: React.FC = () => {
             </Grid>
           ))}
         </Grid>
-      )}
     </Container>
     </div>
   );

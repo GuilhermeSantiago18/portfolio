@@ -9,7 +9,7 @@ import ContactMailIcon from "@mui/icons-material/ContactMail";
 const Header: React.FC = () => {
   return (
     <Box>
-      <AppBar position="static" sx={{ background: "linear-gradient(45deg, #ffd700, #ff8c00)" }}>
+      <AppBar position="static">
         <Toolbar sx={{ justifyContent: "space-around" }}>
           <Stack flexDirection="row">
           <Typography variant="h5" component="div" sx={{ fontFamily: "Montserrat" }}>
