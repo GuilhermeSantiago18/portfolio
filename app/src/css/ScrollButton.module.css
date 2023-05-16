@@ -1,15 +1,14 @@
 .scrollButton {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 0.2rem;
+    right: 0.2rem;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-in-out;
-    background-color: #FDCD3B;
+    transition: opacity 0.8s ease-in-out;
+    color: #FDCD3B;
   }
   
   .showButton {
     opacity: 1;
     visibility: visible;
   }
-  

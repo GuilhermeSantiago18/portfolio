@@ -20,7 +20,7 @@ const Header: React.FC = () => {
 
   return (
     <Box>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar sx={{ justifyContent: "space-around" }}>
           <Stack flexDirection="row">
           <Typography variant="h5" component="div" sx={{ fontFamily: "Montserrat" }}>
