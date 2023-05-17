@@ -47,12 +47,13 @@ const Contact: React.FC = () => {
       <Container sx={{ minHeight: '100vh', mt: 10 }}>
         <FormControl onSubmit={handleSubmit} sx={{ mt: 20 }}>
           <Grid container spacing={1} p={1} justifyContent="right">
-            <Grid item xs={6}>
+            <Grid item xs={6} color='white'>
               <TextField
                 label="Name"
                 fullWidth
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                
               />
             </Grid>
             <Grid item xs={6}>
@@ -61,6 +62,7 @@ const Contact: React.FC = () => {
                 fullWidth
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                inputProps={{style: { color: 'white'}}}
               />
             </Grid>
             <Grid item xs={12}>

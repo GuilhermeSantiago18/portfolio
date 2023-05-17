@@ -41,7 +41,6 @@ const Header: React.FC = () => {
                 Send me a message
               </Typography>
 }
-
               <ScrollLink to="contactSection" smooth={true} offset={100} duration={2500}>
                 <Button variant="contained" sx={{ mx: 1.5 }} onClick={handleClickProjects}>
                   <ContactMailIcon />
@@ -52,7 +51,7 @@ const Header: React.FC = () => {
               <Typography
                 variant="h4"
                 component="div"
-                sx={{ fontFamily: "Montserrat", mx: 1, alignSelf: "center",  fontStyle: "italic", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}
+                sx={{ fontFamily: "Montserrat", mx: 1, alignSelf: "center",  fontStyle: "italic", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)", color: 'primary.main' }}
               >
                Guilherme Santiago
               </Typography>

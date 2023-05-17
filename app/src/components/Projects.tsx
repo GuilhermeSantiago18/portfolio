@@ -22,6 +22,7 @@ type Project = {
 };
 
 const Projects: React.FC = () => {
+  const { showProjects, showButton } = useContext(MyContext);
 
   const projects: Project[] = [
     {
@@ -66,7 +67,7 @@ const Projects: React.FC = () => {
     },
   ];
 
-  const { showProjects, showButton } = useContext(MyContext);
+
 
   return (
     <div id="projectsSection">
@@ -89,7 +90,7 @@ const Projects: React.FC = () => {
               <Grow in={true} timeout={index * 2000}>
                 <Card
                   sx={{
-                    "&:hover": { boxShadow: 4, border: "2px solid #95D5B2" }, borderRadius: 1
+                    "&:hover": { boxShadow: 4, border: "2px solid #FF9600" }, borderRadius: 1
                   }}
                 >
                   <CardMedia
