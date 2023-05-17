@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import { MyContext } from "@/Context/AppContext";
 import {
   Box,
   Card,
   CardContent,
   CardMedia,
   Container,
-  FormControlLabel,
   Grid,
   Grow,
   Stack,
-  Switch,
   Typography,
 } from "@mui/material";
 import Link from "next/link";
+import { useContext } from "react";
 
 type Project = {
   title: string;
@@ -67,8 +66,11 @@ const Projects: React.FC = () => {
     },
   ];
 
+  const { isDisabled, setIsDisabled } = useContext(MyContext);
+
   return (
     <div id="projectsSection">
+      { isDisabled && 
     <Container sx={{minHeight: '100vh', mt: 5}}>
       <Box textAlign="center" className="fade-in" display="flex" justifyContent="center" flexDirection="column" alignItems="center">
         <Grow in={true} timeout={3000}>
@@ -119,6 +121,7 @@ const Projects: React.FC = () => {
           ))}
         </Grid>
     </Container>
+}
     </div>
   );
 };

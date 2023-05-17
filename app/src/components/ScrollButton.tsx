@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import styles from "../css/ScrollButton.module.css";
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import { Box, Button, Stack } from "@mui/material";
+import { Button, Stack } from "@mui/material";
+import { MyContext } from "@/Context/AppContext";
+
 
 
 const ScrollButton: React.FC = () => {
-  const [showButton, setShowButton] = useState(false);
+  const { showButton, setShowButton } = useContext(MyContext)
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      setShowButton(scrollTop > 0);
+      setShowButton(scrollTop > 0)
     };
 
     window.addEventListener("scroll", handleScroll);

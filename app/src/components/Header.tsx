@@ -20,7 +20,7 @@ const Header: React.FC = () => {
 
   return (
     <Box>
-      <AppBar position="fixed">
+      <AppBar position="fixed" sx={{ background: "linear-gradient(30deg, #ffd700, #ff8c00)"}}>
         <Toolbar sx={{ justifyContent: "space-around" }}>
           <Stack flexDirection="row">
           <Typography variant="h5" component="div" sx={{ fontFamily: "Montserrat" }}>
