@@ -66,12 +66,12 @@ const Projects: React.FC = () => {
     },
   ];
 
-  const { isDisabled, setIsDisabled } = useContext(MyContext);
+  const { showProjects, showButton } = useContext(MyContext);
 
   return (
     <div id="projectsSection">
-      { isDisabled && 
-    <Container sx={{minHeight: '100vh', mt: 5}}>
+      { (showProjects || showButton) &&
+    <Container sx={{minHeight: '100vh'}}>
       <Box textAlign="center" className="fade-in" display="flex" justifyContent="center" flexDirection="column" alignItems="center">
         <Grow in={true} timeout={3000}>
         <Typography
@@ -83,7 +83,7 @@ const Projects: React.FC = () => {
         </Typography>
         </Grow>
        </Box>
-        <Grid container justifyContent="flex-start" spacing={2} mt={8} mb={5}>
+        <Grid container justifyContent="flex-start" spacing={2} mt={1}>
           {projects.map((project, index) => (
             <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
               <Grow in={true} timeout={index * 2000}>

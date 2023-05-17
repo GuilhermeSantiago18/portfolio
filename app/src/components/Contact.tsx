@@ -1,16 +1,17 @@
 import { TextField, Button, FormControl, Container, Grid } from "@mui/material";
 
+
 const Contact: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
   };
-  
+
 
   return (
     <div id="contactSection">
-    <Container sx={{minHeight: '100vh', mt: 10}} >
-      <FormControl onSubmit={handleSubmit}>
+    <Container sx={{minHeight: '100vh', mr: 10, mt: 10}} >
+      <FormControl onSubmit={handleSubmit} sx={{mt: 20}}>
         <Grid container spacing={1} p={1} justifyContent="right">
           <Grid item xs={6}>
             <TextField label="Name" fullWidth />

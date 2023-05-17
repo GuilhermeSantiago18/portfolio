@@ -29,10 +29,11 @@ const ScrollButton: React.FC = () => {
 
   return (
     <Stack flexDirection="column" justifyContent="center">
-    <Button className={styles.whattsButton}>
+    {/* <Button className={styles.whattsButton}>
         <WhatsAppIcon />
-        </Button>
+        </Button> */}
     <Button
+      variant="contained"
       className={`${styles.scrollButton} ${showButton ? styles.showButton : ""}`}
       onClick={handleScrollToTop}
     >

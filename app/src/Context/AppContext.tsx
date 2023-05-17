@@ -1,10 +1,12 @@
 import React, { createContext, useState, ReactNode } from "react";
 
 interface MyContextData {
-  isDisabled: boolean;
+  showProjects: boolean;
   showButton: boolean;
-  setIsDisabled: (newValue: boolean) => void;
+  showContact: boolean;
+  setShowProjects: (newValue: boolean) => void;
   setShowButton: (newValue: boolean) => void;
+  setShowContact: (newValue: boolean) => void;
 }
 
 interface AppContextProviderProps {
@@ -12,25 +14,30 @@ interface AppContextProviderProps {
 }
 
 const MyContext = createContext<MyContextData>({
-  isDisabled: false,
+  showProjects: false,
   showButton: false,
-  setIsDisabled: () => {},
+  showContact: false,
+  setShowProjects: () => {},
   setShowButton: () => {},
+  setShowContact: () => {},
 });
 
 const AppContextProvider: React.FC<AppContextProviderProps> = ({ children }) => {
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [showProjects, setShowProjects] = useState(false);
   const [showButton, setShowButton] = useState(false);
+  const [showContact, setShowContact] = useState(false);
 
   const toggleDisabled = (newValue: boolean) => {
-    setIsDisabled(newValue);
+    setShowProjects(newValue);
   };
 
   const contextValue: MyContextData = {
-    isDisabled,
+    showProjects,
     showButton,
-    setIsDisabled: toggleDisabled,
+    showContact,
+    setShowProjects: toggleDisabled,
     setShowButton,
+    setShowContact,
   };
 
   return (
