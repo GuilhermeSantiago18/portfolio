@@ -12,6 +12,10 @@ const validateInputs = (name: string, email: string, message: string): string | 
     if (message.trim().length < 10) {
         return "Please enter at least 10 characters for the message."
     }
+
+    if (message.trim().length > 195) {
+      return "Please enter a maximum of 195 characters for the message."
+  }
   return undefined
   };
   

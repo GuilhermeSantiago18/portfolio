@@ -28,44 +28,52 @@ const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
-      title: "WebScrap",
+      title: "Dashboard",
       image: "/images/dashboard.png",
       siteUrl: "https://velty-dashboard-guilhermesantiago18.vercel.app/",
       repositoryUrl: "https://github.com/GuilhermeSantiago18/Velty-Dashboard",
       description:
-        "This project performs webscrap searching for real-time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
+        "Static sales panel based on figma, to improve visualization for companies, can be improved and become functional.",
     },
     {
-      title: "DashBoard",
+      title: "Webscrap",
       image: "/images/webscrap.png",
       siteUrl: "https://lexart-app.up.railway.app/",
       repositoryUrl: "https://github.com/GuilhermeSantiago18/FullStackProject",
       description:
-        "This project performs webscrap searching for real-time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
+        "This project performs webscrap searching for real time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
     },
     {
-      title: "WebScrap",
-      image: "/images/trivia.png",
+      title: "Trivia",
+      image: "/images/triviagame.png",
       siteUrl: "https://lexart-app.up.railway.app/",
       repositoryUrl: "https://github.com/GuilhermeSantiago18/FullStackProject",
       description:
-        "This project performs webscrap searching for real-time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
+        "Jogo Trivia, fazendo chamadas para a API Trivia. Excelente jogo para testar seus conhecimentos gerais e jogar com amigos.",
     },
     {
-      title: "WebScrap",
+      title: "Weather",
       image: "/images/weather.png",
       siteUrl: "https://lexart-app.up.railway.app/",
       repositoryUrl: "https://github.com/GuilhermeSantiago18/FullStackProject",
       description:
-        "This project performs webscrap searching for real-time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
+        "Simple application, which makes calls to the Weather API, created to show the temperature of all cities in the world.",
     },
     {
-      title: "WebScrap",
-      image: "/images/webscrap.png",
+      title: "Portfolio",
+      image: "/images/portfolio.png",
       siteUrl: "https://lexart-app.up.railway.app/",
       repositoryUrl: "https://github.com/GuilhermeSantiago18/FullStackProject",
       description:
-        "This project performs webscrap searching for real-time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
+        "Personal portfolio so you can get to know me a little more and get to know my skills.",
+    },
+    {
+      title: "WebScrap",
+      image: "/images/guilhermefc.png",
+      siteUrl: "https://lexart-app.up.railway.app/",
+      repositoryUrl: "https://github.com/GuilhermeSantiago18/FullStackProject",
+      description:
+        "Fullstack application where you make requests from the backend to the frontend about data from a football championship.",
     },
   ];
 
@@ -86,13 +94,13 @@ const Projects: React.FC = () => {
         </Typography>
         </Grow>
        </Box>
-        <Grid container justifyContent="flex-start" spacing={2} mt={1}>
+        <Grid container justifyContent="flex-start" spacing={2}>
           {projects.map((project, index) => (
             <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
               <Grow in={true} timeout={index * 2000}>
                 <Card
                   sx={{
-                    "&:hover": { boxShadow: 4, border: "2px solid #FF9600" }, borderRadius: 1
+                    "&:hover": { boxShadow: 4, border: "2px solid #E1E2E2" }, borderRadius: 1
                   }}
                 >
                   <CardMedia
@@ -101,20 +109,20 @@ const Projects: React.FC = () => {
                     image={project.image}
                     alt="Project Image"
                   />
-                  <CardContent sx={{ bgcolor: "#E1E2E2" }}>
+                  <CardContent sx={{ bgcolor: "#E1E2E2", minHeight: "180px"}}>
                     <Stack flexDirection="row" justifyContent="space-around">
                       <Link href={project.siteUrl} target="_blank">
-                        <Typography variant="h6" gutterBottom>
+                        <Typography variant="h6">
                           <LanguageIcon color="primary"/>
                         </Typography>
                       </Link>
                       <Link href={project.repositoryUrl} target="_blank">
-                        <Typography variant="h6" gutterBottom>
+                        <Typography variant="h6">
                           <GitHubIcon color="primary"/>
                         </Typography>
                       </Link>
                     </Stack>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" color="primary" sx={{mt: 1}}>
                       {project.description}
                     </Typography>
                   </CardContent>

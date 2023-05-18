@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
                 label="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                color="primary"
+           
                 fullWidth
               />
             </Grid>
@@ -102,7 +102,7 @@ const Contact: React.FC = () => {
                 fullWidth
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                color="primary"
+              
               />
             </Grid>
             <Grid item xs={12}>
@@ -113,7 +113,8 @@ const Contact: React.FC = () => {
                 rows={4}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                color="primary"
+                color="secondary"
+         
               />
             </Grid>
             {messageError ? (
@@ -127,7 +128,7 @@ const Contact: React.FC = () => {
               <Button
                 type="submit"
                 variant="outlined"
-                color="primary"
+                color="secondary"
                 onClick={handleSubmit}
                 fullWidth
               >
