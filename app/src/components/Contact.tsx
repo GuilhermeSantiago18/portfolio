@@ -68,14 +68,14 @@ const Contact: React.FC = () => {
           <Typography
           variant="h4"
           component="h1"
-          sx={{ mb: 5, mt:50, color: "secondary.main", fontFamily: "Montserrat" }}
+          sx={{ mb: 5, mt:35, color: "secondary.main", fontFamily: "Montserrat" }}
         >
           Contact me
         </Typography>
       <Container
         sx={{
           display: "flex",
-          minHeight: "50vh",
+          minHeight: "40vh",
           mt: 5,
           background: "linear-gradient(90deg, #BEC1C1, #E1E2E2)",
           borderRadius: 1,
@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
       >
         <FormControl
           onSubmit={handleSubmit}
-          sx={{ display: "flex", mt: 15, maxWidth: 700 }}
+          sx={{ display: "flex", mt: 8, maxWidth: 700 }}
         >
           <Grid container spacing={1}>
             <Grid item xs={6} sm={6}>
@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
                 label="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                color="warning"
+                color="primary"
                 fullWidth
               />
             </Grid>
@@ -102,7 +102,7 @@ const Contact: React.FC = () => {
                 fullWidth
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                color="warning"
+                color="primary"
               />
             </Grid>
             <Grid item xs={12}>
@@ -113,7 +113,7 @@ const Contact: React.FC = () => {
                 rows={4}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                color="warning"
+                color="primary"
               />
             </Grid>
             {messageError ? (

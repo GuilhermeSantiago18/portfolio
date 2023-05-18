@@ -30,7 +30,7 @@ const Header: React.FC = () => {
       <Grow in={true} timeout={1500}>
         <AppBar
           position="fixed"
-          sx={{ background: "linear-gradient(180deg, #ffd700, #ff8c00)" }}
+          sx={{ background: "linear-gradient(130deg, primary.main, #ff4c49)" }}
         >
           <Toolbar sx={{ justifyContent: "space-between" }}>
             <Box display="flex" alignItems="center">
@@ -42,7 +42,7 @@ const Header: React.FC = () => {
                     fontFamily: "Montserrat",
                     mx: 1,
                     paddingLeft: 5,
-                    color: "primary.main",
+                    color: "primary.secondary",
                   }}
                 >
                   Send me a message
@@ -63,22 +63,7 @@ const Header: React.FC = () => {
                 </Button>
               </ScrollLink>
             </Box>
-            {!isMobile && (
-              <Typography
-                variant="h4"
-                component="div"
-                sx={{
-                  fontFamily: "Montserrat",
-                  mx: 1,
-                  alignSelf: "center",
-                  fontStyle: "italic",
-                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
-                  color: "primary.main",
-                }}
-              >
-                Guilherme Santiago - Full Stack Developer
-              </Typography>
-            )}
+           
             <Box display="flex" alignItems="center" p={2}>
               <ScrollLink
                 to="projectsSection"
