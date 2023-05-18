@@ -99,7 +99,7 @@ const Projects: React.FC = () => {
                     image={project.image}
                     alt="Project Image"
                   />
-                  <CardContent sx={{ bgcolor: "secondary.main" }}>
+                  <CardContent sx={{ bgcolor: "#62707A" }}>
                     <Stack flexDirection="row" justifyContent="space-around">
                       <Link href={project.siteUrl} target="_blank">
                         <Typography variant="h6" gutterBottom>

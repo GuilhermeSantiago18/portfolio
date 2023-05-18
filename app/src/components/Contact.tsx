@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
           display: "flex",
           minHeight: "40vh",
           mt: 5,
-          background: "linear-gradient(90deg, #BEC1C1, #E1E2E2)",
+          bgcolor: "#62707A",
           borderRadius: 1,
           justifyContent: "center",
         }}
