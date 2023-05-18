@@ -12,6 +12,8 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { useContext } from "react";
+import LanguageIcon from '@mui/icons-material/Language';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 type Project = {
   title: string;
@@ -94,21 +96,21 @@ const Projects: React.FC = () => {
                   }}
                 >
                   <CardMedia
-                    sx={{minHeight: '220px'}}
+                    sx={{maxHeight: '180px'}}
                     component="img"
                     image={project.image}
                     alt="Project Image"
                   />
-                  <CardContent sx={{ bgcolor: "#62707A" }}>
+                  <CardContent sx={{ bgcolor: "#E1E2E2" }}>
                     <Stack flexDirection="row" justifyContent="space-around">
                       <Link href={project.siteUrl} target="_blank">
                         <Typography variant="h6" gutterBottom>
-                          Site
+                          <LanguageIcon color="primary"/>
                         </Typography>
                       </Link>
                       <Link href={project.repositoryUrl} target="_blank">
                         <Typography variant="h6" gutterBottom>
-                          Repository
+                          <GitHubIcon color="primary"/>
                         </Typography>
                       </Link>
                     </Stack>
