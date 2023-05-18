@@ -64,11 +64,19 @@ const Contact: React.FC = () => {
 
   return (
     <div id="contactSection">
+      <Container sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <Typography
+          variant="h4"
+          component="h1"
+          sx={{ mb: 5, mt:10, color: "secondary.main", fontFamily: "Montserrat" }}
+        >
+          Contact me
+        </Typography>
       <Container
         sx={{
           display: "flex",
           minHeight: "50vh",
-          mt: 10,
+          mt: 5,
           background: "linear-gradient(90deg, #BEC1C1, #E1E2E2)",
           borderRadius: 1,
           justifyContent: "center",
@@ -128,6 +136,7 @@ const Contact: React.FC = () => {
             </Grid>
           </Grid>
         </FormControl>
+      </Container>
       </Container>
       <Snackbar
         open={showSuccessMessage}
