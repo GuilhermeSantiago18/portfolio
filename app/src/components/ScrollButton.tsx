@@ -1,7 +1,6 @@
 import { useEffect, useContext } from "react";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 import styles from "../css/ScrollButton.module.css";
-// import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { Button, Stack } from "@mui/material";
 import { MyContext } from "@/Context/AppContext";
 
@@ -20,7 +19,7 @@ const ScrollButton: React.FC = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [setShowButton]);
 
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -28,9 +27,6 @@ const ScrollButton: React.FC = () => {
 
   return (
     <Stack flexDirection="column" justifyContent="center">
-      {/* <Button className={styles.whattsButton}>
-        <WhatsAppIcon />
-        </Button> */}
       <Button
         variant="contained"
         className={`${styles.scrollButton} ${

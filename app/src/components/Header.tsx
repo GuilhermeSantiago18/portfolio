@@ -51,7 +51,7 @@ const Header: React.FC = () => {
               <ScrollLink
                 to="contactSection"
                 smooth={true}
-                offset={100}
+                offset={isMobile ? 2300: 850}
                 duration={2500}
               >
                 <Button
@@ -63,12 +63,12 @@ const Header: React.FC = () => {
                 </Button>
               </ScrollLink>
             </Box>
-           
+
             <Box display="flex" alignItems="center" p={2}>
               <ScrollLink
                 to="projectsSection"
                 smooth={true}
-                offset={-80}
+                offset={-20}
                 duration={1500}
               >
                 <Button

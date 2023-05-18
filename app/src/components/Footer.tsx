@@ -5,9 +5,8 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import Link from "next/link";
 import styled from "@emotion/styled";
 
-
 const StyledWhatsAppIcon = styled(WhatsAppIcon)`
-  color: #E1E2E2
+  color: #e1e2e2;
 `;
 
 const Footer = () => {
@@ -23,7 +22,6 @@ const Footer = () => {
                 target="_blank"
                 href="https://api.whatsapp.com/send?phone=55084996187958"
                 passHref
-     
               >
                 <StyledWhatsAppIcon />
               </Link>
