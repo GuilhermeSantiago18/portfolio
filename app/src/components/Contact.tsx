@@ -118,7 +118,7 @@ const Contact: React.FC = () => {
             </Grid>
             {messageError ? (
               <Stack>
-                <Typography variant="body2" color="error" sx={{ ml: 1 }}>
+                <Typography variant="body2" color="#8B2829" sx={{ ml: 1 }}>
                   {messageError}
                 </Typography>
               </Stack>
