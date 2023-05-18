@@ -113,7 +113,7 @@ const Skills: React.FC = () => {
         <Typography
           variant="h4"
           component="h1"
-          sx={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",  textAlign: "center", mb: 10}}
+          sx={{ fontFamily: "Montserrat", textAlign: "center", mb: 10, color: "secondary.main"}}
         >
           Skills
         </Typography>
