@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
           <Typography
           variant="h4"
           component="h1"
-          sx={{ mb: 5, mt:10, color: "secondary.main", fontFamily: "Montserrat" }}
+          sx={{ mb: 5, mt:50, color: "secondary.main", fontFamily: "Montserrat" }}
         >
           Contact me
         </Typography>
