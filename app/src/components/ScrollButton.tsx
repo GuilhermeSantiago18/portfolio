@@ -1,19 +1,18 @@
 import { useEffect, useContext } from "react";
-import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 import styles from "../css/ScrollButton.module.css";
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+// import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { Button, Stack } from "@mui/material";
 import { MyContext } from "@/Context/AppContext";
 
-
-
 const ScrollButton: React.FC = () => {
-  const { showButton, setShowButton } = useContext(MyContext)
+  const { showButton, setShowButton } = useContext(MyContext);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      setShowButton(scrollTop > 0)
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      setShowButton(scrollTop > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -29,16 +28,18 @@ const ScrollButton: React.FC = () => {
 
   return (
     <Stack flexDirection="column" justifyContent="center">
-    {/* <Button className={styles.whattsButton}>
+      {/* <Button className={styles.whattsButton}>
         <WhatsAppIcon />
         </Button> */}
-    <Button
-      variant="contained"
-      className={`${styles.scrollButton} ${showButton ? styles.showButton : ""}`}
-      onClick={handleScrollToTop}
-    >
-      <KeyboardDoubleArrowUpIcon />
-    </Button>
+      <Button
+        variant="contained"
+        className={`${styles.scrollButton} ${
+          showButton ? styles.showButton : ""
+        }`}
+        onClick={handleScrollToTop}
+      >
+        <KeyboardDoubleArrowUpIcon />
+      </Button>
     </Stack>
   );
 };

@@ -28,47 +28,91 @@ const Header: React.FC = () => {
   return (
     <Box>
       <Grow in={true} timeout={1500}>
-        <AppBar position="fixed" sx={{ background: "linear-gradient(180deg, #ffd700, #ff8c00)" }}>
+        <AppBar
+          position="fixed"
+          sx={{ background: "linear-gradient(180deg, #ffd700, #ff8c00)" }}
+        >
           <Toolbar sx={{ justifyContent: "space-between" }}>
             <Box display="flex" alignItems="center">
-              {!isMobile && 
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{ fontFamily: "Montserrat", mx: 1, paddingLeft: 5, color: 'primary.main' }}
+              {!isMobile && (
+                <Typography
+                  variant="h6"
+                  component="div"
+                  sx={{
+                    fontFamily: "Montserrat",
+                    mx: 1,
+                    paddingLeft: 5,
+                    color: "primary.main",
+                  }}
+                >
+                  Send me a message
+                </Typography>
+              )}
+              <ScrollLink
+                to="contactSection"
+                smooth={true}
+                offset={100}
+                duration={2500}
               >
-                Send me a message
-              </Typography>
-}
-              <ScrollLink to="contactSection" smooth={true} offset={100} duration={2500}>
-                <Button variant="contained" sx={{ mx: 1.5 }} onClick={handleClickProjects}>
+                <Button
+                  variant="contained"
+                  sx={{ mx: 1.5 }}
+                  onClick={handleClickProjects}
+                >
                   <ContactMailIcon />
                 </Button>
               </ScrollLink>
             </Box>
-            {!isMobile && 
+            {!isMobile && (
               <Typography
                 variant="h4"
                 component="div"
-                sx={{ fontFamily: "Montserrat", mx: 1, alignSelf: "center",  fontStyle: "italic", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)", color: 'primary.main' }}
+                sx={{
+                  fontFamily: "Montserrat",
+                  mx: 1,
+                  alignSelf: "center",
+                  fontStyle: "italic",
+                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+                  color: "primary.main",
+                }}
               >
-               Guilherme Santiago
+                Guilherme Santiago - Full Stack Developer
               </Typography>
-}
+            )}
             <Box display="flex" alignItems="center" p={2}>
-              <ScrollLink to="projectsSection" smooth={true} offset={-80} duration={1500}>
-                <Button variant="contained" sx={{ mx: 1 }} onClick={handleClickProjects}>
-                  <Typography component="div" sx={{ fontFamily: "Montserrat", cursor: "pointer" }}>
+              <ScrollLink
+                to="projectsSection"
+                smooth={true}
+                offset={-80}
+                duration={1500}
+              >
+                <Button
+                  variant="contained"
+                  sx={{ mx: 1 }}
+                  onClick={handleClickProjects}
+                >
+                  <Typography
+                    component="div"
+                    sx={{ fontFamily: "Montserrat", cursor: "pointer" }}
+                  >
                     Works
                   </Typography>
                 </Button>
               </ScrollLink>
-              <Link target="_blank" href="https://www.linkedin.com/in/guilherme-santiago-dev/" passHref>
+              <Link
+                target="_blank"
+                href="https://www.linkedin.com/in/guilherme-santiago-dev/"
+                passHref
+              >
                 <Button variant="contained">
                   <LinkedInIcon fontSize="medium" />
                 </Button>
               </Link>
-              <Link target="_blank" href="https://github.com/GuilhermeSantiago18" passHref>
+              <Link
+                target="_blank"
+                href="https://github.com/GuilhermeSantiago18"
+                passHref
+              >
                 <Button variant="contained" sx={{ mx: 1 }}>
                   <GitHubIcon fontSize="medium" />
                 </Button>
