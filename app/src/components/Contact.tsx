@@ -61,9 +61,9 @@ const Contact: React.FC = () => {
 
   return (
     <div id="contactSection">
-      <Container sx={{ minHeight: "50vh", mt: 10, background: "linear-gradient(90deg, #BEC1C1, #E1E2E2)", borderRadius: 1}}>
-        <FormControl onSubmit={handleSubmit} sx={{ mt: 15 }}>
-          <Grid container spacing={1}>
+      <Container sx={{display: "flex", minHeight: "50vh", mt: 10, background: "linear-gradient(90deg, #BEC1C1, #E1E2E2)", borderRadius: 1, justifyContent: "center"}}>
+        <FormControl onSubmit={handleSubmit} sx={{display: "flex", mt: 15}}>
+          <Grid container spacing={1} >
             <Grid item xs={6} sm={6}>
               <TextField
                 label="Name"
@@ -107,6 +107,7 @@ const Contact: React.FC = () => {
                 color="primary"
                 onClick={handleSubmit}
                 fullWidth
+               
               >
                 Send
               </Button>
