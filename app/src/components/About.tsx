@@ -2,7 +2,7 @@ import { Typography, Grow, Stack } from "@mui/material";
 
 const About: React.FC = () => {
   return (
-    <Stack flexDirection="column" alignItems="center" mt={15} mb={20} p={2}>
+    <Stack flexDirection="column" alignItems="center" mt={15} mb={10} p={2}>
       <Grow in={true} timeout={2000}>
         <Typography variant="h4" sx={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)", mb: 5, fontFamily: "Montserrat", color: "secondary.main" }}>About me</Typography>
       </Grow>

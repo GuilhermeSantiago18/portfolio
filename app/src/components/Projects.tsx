@@ -78,7 +78,7 @@ const Projects: React.FC = () => {
         <Typography
           variant="h4"
           component="h1"
-          sx={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}
+          sx={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)", mb: 5, mt:10 }}
         >
           Works
         </Typography>

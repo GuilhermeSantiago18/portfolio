@@ -33,9 +33,11 @@ const Contact: React.FC = () => {
       .catch((error) => {
         console.error('Erro ao enviar o e-mail:', error);
       });
+
       setTimeout(() => {
         setShowSuccessMessage(false)
-      }, 4000)
+        }, 4000)
+    
   };
 
   const handleClose = () => {
@@ -62,7 +64,7 @@ const Contact: React.FC = () => {
                 fullWidth
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                inputProps={{style: { color: 'white'}}}
+                
               />
             </Grid>
             <Grid item xs={12}>

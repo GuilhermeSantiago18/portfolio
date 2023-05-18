@@ -4,7 +4,6 @@ import {
   Box,
   Button,
   Grow,
-  Stack,
   Toolbar,
   Typography,
   useMediaQuery,
@@ -36,7 +35,7 @@ const Header: React.FC = () => {
               <Typography
                 variant="h6"
                 component="div"
-                sx={{ fontFamily: "Montserrat", mx: 1, paddingLeft: 5 }}
+                sx={{ fontFamily: "Montserrat", mx: 1, paddingLeft: 5, color: 'primary.main' }}
               >
                 Send me a message
               </Typography>

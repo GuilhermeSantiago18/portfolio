@@ -3,6 +3,7 @@ import {
   Card,
   CardMedia,
   Grid,
+  Grow,
   Stack,
   Typography,
   useMediaQuery,
@@ -46,15 +47,54 @@ const Skills: React.FC = () => {
         "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
     },
     {
-      name: "ReactJs",
-      image:
-        "https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white",
-    },
-    {
-      name: "ReactJs",
-      image:
-        "https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white",
-    },
+        name: "Redux",
+        image:
+          "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
+      },
+      {
+        name: "Redux",
+        image:
+          "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
+      },
+      
+      {
+        name: "Redux",
+        image:
+          "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
+      },
+      {
+        name: "Redux",
+        image:
+          "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
+      },
+      {
+        name: "Redux",
+        image:
+          "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
+      },
+      {
+        name: "Redux",
+        image:
+          "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
+      },
+      {
+        name: "Redux",
+        image:
+          "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
+      },
+      {
+        name: "Redux",
+        image:
+          "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
+      },
+
+      
+  
+      
+    
+      
+ 
+      
   ];
   const isMobile = useMediaQuery((theme: any) => theme.breakpoints.down("sm"));
 
@@ -63,18 +103,17 @@ const Skills: React.FC = () => {
       container
       direction={isMobile ? "column" : "row"}
       justifyContent="space-around"
-      mb={10}
+      mb={5}
       sx={{
-        paddingLeft: isMobile ? "16px" : 0,
-        paddingRight: isMobile ? "16px" : 0,
+        maxWidth: "100%",
+        paddingLeft: "10px"
       }}
     >
       <Grid item xs={12}>
         <Typography
           variant="h4"
           component="h1"
-          sx={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)", marginBottom: isMobile ? 3 : 0}}
-          align={isMobile ? "center": "left"}
+          sx={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",  textAlign: "center", mb: 10}}
         >
           Skills
         </Typography>
@@ -84,14 +123,15 @@ const Skills: React.FC = () => {
         item
         justifyContent="center"
         spacing={2}
-        sx={{ width: "fit-content" }}
+        sx={{ justifyContent: "flex-start" }}
       >
         {skills.map((skill, index) => (
-          <Grid item key={index} xs={6} sm={4} md={3} spacing={1}>
+          <Grid item key={index} xs={6} sm={4} md={2} spacing={1}>
+              <Grow in={true} timeout={index * 1500}>
             <Card
               sx={{
                 "&:hover": { boxShadow: 4, border: "2px solid #FF9600" },
-                borderRadius: 1,
+                borderRadius: 1
               }}
             >
               <CardMedia
@@ -99,10 +139,12 @@ const Skills: React.FC = () => {
                 image={skill.image}
                 alt="Skill Image"
                 style={{
-                  height: "30px",
+                  height: "40px",
+                  width: "100%"
                 }}
               />
             </Card>
+            </Grow>
           </Grid>
         ))}
       </Grid>
