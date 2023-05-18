@@ -8,6 +8,7 @@ import {
   Snackbar,
   Alert,
   Typography,
+  Stack,
 } from "@mui/material";
 import emailjs from "emailjs-com";
 import validateInputs from "@/Validations/ValidateInputs";
@@ -17,7 +18,9 @@ const Contact: React.FC = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [messageError, setMessageError] = useState<string | undefined>(undefined);
+  const [messageError, setMessageError] = useState<string | undefined>(
+    undefined
+  );
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -61,9 +64,21 @@ const Contact: React.FC = () => {
 
   return (
     <div id="contactSection">
-      <Container sx={{display: "flex", minHeight: "50vh", mt: 10, background: "linear-gradient(90deg, #BEC1C1, #E1E2E2)", borderRadius: 1, justifyContent: "center"}}>
-        <FormControl onSubmit={handleSubmit} sx={{display: "flex", mt: 15}}>
-          <Grid container spacing={1} >
+      <Container
+        sx={{
+          display: "flex",
+          minHeight: "50vh",
+          mt: 10,
+          background: "linear-gradient(90deg, #BEC1C1, #E1E2E2)",
+          borderRadius: 1,
+          justifyContent: "center",
+        }}
+      >
+        <FormControl
+          onSubmit={handleSubmit}
+          sx={{ display: "flex", mt: 15, maxWidth: 700 }}
+        >
+          <Grid container spacing={1}>
             <Grid item xs={6} sm={6}>
               <TextField
                 label="Name"
@@ -93,13 +108,13 @@ const Contact: React.FC = () => {
                 color="warning"
               />
             </Grid>
-            {messageError && (
-              <Grid item xs={12}>
-                <Typography variant="body2" color="error">
+            {messageError ? (
+              <Stack>
+                <Typography variant="body2" color="error" sx={{ ml: 1 }}>
                   {messageError}
                 </Typography>
-              </Grid>
-            )}
+              </Stack>
+            ) : null}
             <Grid item xs={12}>
               <Button
                 type="submit"
@@ -107,7 +122,6 @@ const Contact: React.FC = () => {
                 color="primary"
                 onClick={handleSubmit}
                 fullWidth
-               
               >
                 Send
               </Button>
