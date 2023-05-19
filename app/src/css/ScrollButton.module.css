@@ -1,0 +1,14 @@
+.scrollButton {
+    position: fixed;
+    bottom: 0.2rem;
+    right: 0.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out;
+   
+  }
+  
+  .showButton {
+    opacity: 1;
+    visibility: visible;
+  }

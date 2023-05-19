@@ -1,59 +1,112 @@
-import React, { useRef } from "react";
-import { AppBar, Box, Button, Container, Stack, Toolbar, Typography } from "@mui/material";
+import React, { useContext } from "react";
+import {
+  AppBar,
+  Box,
+  Button,
+  Grow,
+  Toolbar,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import ContactMailIcon from "@mui/icons-material/ContactMail";
+import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
-import Contact from "./Contact";
-import Projects from "./Projects";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
+import { MyContext } from "@/Context/AppContext";
+import ScrollButton from "./ScrollButton";
 
 const Header: React.FC = () => {
-  const projectsRef = useRef<null | HTMLDivElement>(null);
-  const contactRef = useRef<null | HTMLDivElement>(null);
+  const { showProjects, setShowProjects } = useContext(MyContext);
 
-  function handleScrollToProjects() {
-    projectsRef.current?.scrollIntoView({ behavior: "smooth" });
-  }
+  const handleClickProjects = () => {
+    setShowProjects(!showProjects);
+  };
 
-  function handleScrollToContact() {
-    contactRef.current?.scrollIntoView({ behavior: "smooth" });
-  }
+  const isMobile = useMediaQuery((theme: any) => theme.breakpoints.down("sm"));
 
   return (
     <Box>
-      <AppBar position="static" sx={{ background: "linear-gradient(45deg, #ffd700, #ff8c00)" }}>
-        <Toolbar sx={{ justifyContent: "space-around" }}>
-          <Stack sx={{ flexDirection: "row" }}>
-            <Typography variant="h5" component="div" sx={{ fontFamily: "Montserrat" }}>
-              Guilherme Santiago
-            </Typography>
-            <Button variant="contained" onClick={handleScrollToContact} sx={{ mx: 1 }}>
-              <ContactMailIcon />
-            </Button>
-          </Stack>
-          <Stack sx={{ flexDirection: "row" }}>
-            <Button variant="contained" sx={{mx: 1}}>
-          <Typography component="div" onClick={handleScrollToProjects} sx={{ fontFamily: "Montserrat", cursor: 'pointer'}}>
-              Works
-            </Typography>
-            </Button>
-            <Link target="_blank" href="https://www.linkedin.com/in/guilherme-santiago-dev/" passHref>
-              <Button variant="contained">
-                <LinkedInIcon fontSize="medium" />
-              </Button>
-            </Link>
-            <Link target="_blank" href="https://github.com/GuilhermeSantiago18" passHref>
-              <Button variant="contained" sx={{ mx: 1 }}>
-                <GitHubIcon fontSize="medium" />
-              </Button>
-            </Link>
-          </Stack>
-        </Toolbar>
-      </AppBar>
-      <div ref={projectsRef} />
-      {<Projects />}
-      <div ref={contactRef} />
-      {<Contact />}
+      <Grow in={true} timeout={1500}>
+        <AppBar
+          position="fixed"
+          sx={{ background: "linear-gradient(130deg, primary.main, #ff4c49)" }}
+        >
+          <Toolbar sx={{ justifyContent: "space-between" }}>
+            <Box display="flex" alignItems="center">
+              {!isMobile && (
+                <Typography
+                  variant="h6"
+                  component="div"
+                  sx={{
+                    fontFamily: "Montserrat",
+                    mx: 1,
+                    paddingLeft: 5,
+                    color: "primary.secondary",
+                  }}
+                >
+                  Send me a message
+                </Typography>
+              )}
+              <ScrollLink
+                to="contactSection"
+                smooth={true}
+                offset={isMobile ? 2300: 850}
+                duration={2500}
+              >
+                <Button
+                  variant="contained"
+                  sx={{ mx: 1.5 }}
+                  onClick={handleClickProjects}
+                >
+                  <ContactMailIcon />
+                </Button>
+              </ScrollLink>
+            </Box>
+
+            <Box display="flex" alignItems="center" p={2}>
+              <ScrollLink
+                to="projectsSection"
+                smooth={true}
+                offset={-20}
+                duration={1500}
+              >
+                <Button
+                  variant="contained"
+                  sx={{ mx: 1 }}
+                  onClick={handleClickProjects}
+                >
+                  <Typography
+                    component="div"
+                    sx={{ fontFamily: "Montserrat", cursor: "pointer" }}
+                  >
+                    Works
+                  </Typography>
+                </Button>
+              </ScrollLink>
+              <Link
+                target="_blank"
+                href="https://www.linkedin.com/in/guilherme-santiago-dev/"
+                passHref
+              >
+                <Button variant="contained">
+                  <LinkedInIcon fontSize="medium" />
+                </Button>
+              </Link>
+              <Link
+                target="_blank"
+                href="https://github.com/GuilhermeSantiago18"
+                passHref
+              >
+                <Button variant="contained" sx={{ mx: 1 }}>
+                  <GitHubIcon fontSize="medium" />
+                </Button>
+              </Link>
+            </Box>
+          </Toolbar>
+        </AppBar>
+      </Grow>
+      <ScrollButton />
     </Box>
   );
 };
