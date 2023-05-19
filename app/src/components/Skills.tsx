@@ -120,7 +120,7 @@ const Skills: React.FC = () => {
             <Grow in={true} timeout={index * 1500}>
               <Card
                 sx={{
-                  "&:hover": { boxShadow: 4, border: "2px solid #FF9600" },
+                  "&:hover": { boxShadow: 4, border: "2px solid #E1E2E2" },
                   borderRadius: 1,
                 }}
               >
