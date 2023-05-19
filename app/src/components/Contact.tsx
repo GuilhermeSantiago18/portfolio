@@ -9,6 +9,7 @@ import {
   Alert,
   Typography,
   Stack,
+  useMediaQuery,
 } from "@mui/material";
 import emailjs from "emailjs-com";
 import validateInputs from "@/Validations/ValidateInputs";
@@ -22,6 +23,8 @@ const Contact: React.FC = () => {
     undefined
   );
 
+
+  const isMobile = useMediaQuery((theme: any) => theme.breakpoints.down("sm"));
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
@@ -100,6 +103,7 @@ const Contact: React.FC = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   fullWidth
+                  color="secondary"
                 />
               </Grid>
               <Grid item xs={6} sm={6}>
@@ -108,6 +112,7 @@ const Contact: React.FC = () => {
                   fullWidth
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  color="secondary"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -152,7 +157,7 @@ const Contact: React.FC = () => {
         <Alert
           onClose={handleClose}
           severity="success"
-          sx={{ width: "90%", mr: 8 }}
+          sx={{ width: "90%", mr: 8, mb: isMobile ? 11 : 6 }}
         >
           Email successfully sent!
         </Alert>
