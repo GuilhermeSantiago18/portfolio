@@ -1,4 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = nextConfig
+module.exports = {
+    basePath: '/portfolio',
+    assetPrefix: '/portfolio/',
+    distDir: 'out',
+  };
+  
