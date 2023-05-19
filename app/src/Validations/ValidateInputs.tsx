@@ -1,7 +1,7 @@
 const validateInputs = (name: string, email: string, message: string): string | undefined => {
   
     if (name.trim().length < 3) {
-        return "Please enter at least 3 characters for the name."
+        return "Please enter at least 2 characters for the name."
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
