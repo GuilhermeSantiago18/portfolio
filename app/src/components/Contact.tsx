@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
             display: "flex",
             minHeight: "40vh",
             mt: 5,
-            bgcolor: "#62707A",
+            bgcolor: "#32404B",
             borderRadius: 1,
             justifyContent: "center",
           }}
