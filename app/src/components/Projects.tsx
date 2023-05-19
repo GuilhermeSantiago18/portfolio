@@ -44,14 +44,6 @@ const Projects: React.FC = () => {
         "Performs webscrap searching for real time information from Mercado Livre and Buscapé, being able to choose by categories and filters.",
     },
     {
-      title: "Dashboard",
-      image: "/images/dashboard.png",
-      siteUrl: "https://velty-dashboard-guilhermesantiago18.vercel.app/",
-      repositoryUrl: "https://github.com/GuilhermeSantiago18/Velty-Dashboard",
-      description:
-        "Static sales panel based on figma, to improve visualization for companies, can be improved and become functional.",
-    },
-    {
       title: "Trivia",
       image: "/images/triviagame.png",
       siteUrl: "https://guilhermesantiago18.github.io/TriviaGame",
@@ -69,6 +61,14 @@ const Projects: React.FC = () => {
         "Fullstack application where you make requests from the backend to the frontend about data from a football championship.",
     },
     {
+      title: "Dashboard",
+      image: "/images/dashboard.png",
+      siteUrl: "https://velty-dashboard-guilhermesantiago18.vercel.app/",
+      repositoryUrl: "https://github.com/GuilhermeSantiago18/Velty-Dashboard",
+      description:
+        "Static sales panel based on figma, to improve visualization for companies, can be improved and become functional.",
+    },
+    {
       title: "Weather",
       image: "/images/weather.png",
       siteUrl: "https://weather-project-tawny.vercel.app",
@@ -76,6 +76,7 @@ const Projects: React.FC = () => {
       description:
         "Simple application, which makes calls to the Weather API, created to show the temperature of all cities in the world.",
     },
+ 
  
   ];
 
