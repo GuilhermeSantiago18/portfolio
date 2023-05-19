@@ -157,7 +157,7 @@ const Contact: React.FC = () => {
         <Alert
           onClose={handleClose}
           severity="success"
-          sx={{ width: "90%", mr: 8, mb: isMobile ? 11 : 6 }}
+          sx={{ width: "90%", mr: isMobile ? 2 : 8, mb: isMobile ? 11 : 6 }}
         >
           Email successfully sent!
         </Alert>
