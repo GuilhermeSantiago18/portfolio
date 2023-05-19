@@ -3,4 +3,3 @@ module.exports = {
     assetPrefix: '/portfolio/',
     distDir: 'out',
   };
-  
