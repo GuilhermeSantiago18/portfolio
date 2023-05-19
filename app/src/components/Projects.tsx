@@ -30,7 +30,7 @@ const Projects: React.FC = () => {
     {
       title: "Portfolio",
       image: "/images/portfolio.png",
-      siteUrl: "https://lexart-app.up.railway.app/",
+      siteUrl: "https://guilhermesantiago.vercel.app/",
       repositoryUrl: "https://github.com/GuilhermeSantiago18/portfolio",
       description:
         "Personal portfolio so you can get to know me more and get to know my about skills.",
