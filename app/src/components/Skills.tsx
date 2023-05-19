@@ -95,6 +95,7 @@ const Skills: React.FC = () => {
       }}
     >
       <Grid item xs={12}>
+      <Grow in={true} timeout={2000}>
         <Typography
           variant="h4"
           component="h1"
@@ -107,6 +108,7 @@ const Skills: React.FC = () => {
         >
           Skills
         </Typography>
+        </Grow>
       </Grid>
       <Grid
         container
@@ -117,7 +119,7 @@ const Skills: React.FC = () => {
       >
         {skills.map((skill, index) => (
           <Grid item key={index} xs={6} sm={4} md={2}>
-            <Grow in={true} timeout={index * 1500}>
+            <Grow in={true} timeout={(index +1) * 1500}>
               <Card
                 sx={{
                   "&:hover": { boxShadow: 4, border: "2px solid #E1E2E2" },
