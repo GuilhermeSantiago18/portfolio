@@ -29,9 +29,7 @@ const ScrollButton: React.FC = () => {
     <Stack flexDirection="column" justifyContent="center">
       <Button
         variant="contained"
-        className={`${styles.scrollButton} ${
-          showButton ? styles.showButton : ""
-        }`}
+        className={`${styles.scrollButton} ${showButton ? styles.showButton : ""}`}
         onClick={handleScrollToTop}
       >
         <KeyboardDoubleArrowUpIcon />
