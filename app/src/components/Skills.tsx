@@ -112,11 +112,11 @@ const Skills: React.FC = () => {
         container
         item
         justifyContent="center"
-        spacing={2}
+        spacing={1}
         sx={{ justifyContent: "flex-start" }}
       >
         {skills.map((skill, index) => (
-          <Grid item key={index} xs={6} sm={4} md={2} spacing={1}>
+          <Grid item key={index} xs={6} sm={4} md={2}>
             <Grow in={true} timeout={index * 1500}>
               <Card
                 sx={{

@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
         >
           <FormControl
             onSubmit={handleSubmit}
-            sx={{ display: "flex", mt: 8, maxWidth: 700 }}
+            sx={{ display: "flex", mt: 6, maxWidth: 700 }}
           >
             <Grid container spacing={1}>
               <Grid item xs={6} sm={6}>
@@ -123,7 +123,7 @@ const Contact: React.FC = () => {
               </Grid>
               {messageError ? (
                 <Stack>
-                  <Typography variant="body2" color="#8B2829" sx={{ ml: 1 }}>
+                  <Typography variant="body2" color="#FF1744" sx={{ ml: 1 }}>
                     {messageError}
                   </Typography>
                 </Stack>
