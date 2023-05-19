@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
       siteUrl: "https://guilhermesantiago.vercel.app/",
       repositoryUrl: "https://github.com/GuilhermeSantiago18/portfolio",
       description:
-        "Personal portfolio so you can get to know me more and get to know my about skills.",
+        "Personal portfolio so you can get to know me more and get to know about my skills.",
     },
     {
       title: "Webscrap",
