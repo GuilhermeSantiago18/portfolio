@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
 
       setTimeout(() => {
         setShowSuccessMessage(false);
-      }, 4000);
+      }, 6000);
     }
   };
 
