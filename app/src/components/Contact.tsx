@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   TextField,
   Button,
@@ -22,16 +22,24 @@ const Contact: React.FC = () => {
   const [messageError, setMessageError] = useState<string | undefined>(
     undefined
   );
-
-
   const isMobile = useMediaQuery((theme: any) => theme.breakpoints.down("sm"));
+
+  useEffect(() => {
+    const validations = validateInputs(name, email, message);
+    if (!name && !email  && !message ) {
+      setMessageError('')
+    } else {
+      setMessageError(validations);
+    }
+  
+  }, [email, message, name])
+
+  
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    const validations = validateInputs(name, email, message);
-    setMessageError(validations);
 
-    if (!validations) {
+    if (!messageError) {
       const serviceId = "service_a8n6f1t";
       const templateId = "template_c4qipbp";
       const userId = "XhIsTPNFx_ykfnuep";
@@ -57,7 +65,7 @@ const Contact: React.FC = () => {
 
       setTimeout(() => {
         setShowSuccessMessage(false);
-      }, 5000);
+      }, 4000);
     }
   };
 
