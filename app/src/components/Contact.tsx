@@ -27,9 +27,9 @@ const Contact: React.FC = () => {
   useEffect(() => {
     const validations = validateInputs(name, email, message);
     if (!name && !email  && !message ) {
-      setMessageError('')
+       setMessageError('')
     } else {
-      setMessageError(validations);
+       setMessageError(validations);
     }
   
   }, [email, message, name])
