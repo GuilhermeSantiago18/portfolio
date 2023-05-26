@@ -25,19 +25,20 @@ const Contact: React.FC = () => {
   const isMobile = useMediaQuery((theme: any) => theme.breakpoints.down("sm"));
 
   useEffect(() => {
+ 
     const validations = validateInputs(name, email, message);
-    if (!name && !email  && !message ) {
-       setMessageError('')
-    } else {
-       setMessageError(validations);
+    setMessageError(validations);
+    if (!name && !email && !message) {
+      setMessageError('')
     }
-  
-  }, [email, message, name])
+  }, [email, message, name]);
 
-  
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
+    if (!name || !email || !message) {
+      return ''
+    }
 
     if (!messageError) {
       const serviceId = "service_a8n6f1t";
@@ -53,7 +54,7 @@ const Contact: React.FC = () => {
       emailjs
         .send(serviceId, templateId, templateParams, userId)
         .then((response) => {
-          `E-mail enviado com sucesso!, ${response.status}, ${response.text}`;
+          console.log(`E-mail enviado com sucesso!, ${response.status}, ${response.text}`);
           setShowSuccessMessage(true);
           setName("");
           setEmail("");
